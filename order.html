@@ -1,236 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checkout | Honest Restaurant</title>
-
-<style>
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:#0f0f0f;
-    color:white;
-}
-
-header{
-    background:#000;
-    padding:18px 60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:600;
-    letter-spacing:1px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-}
-
-.container{
-    max-width:1000px;
-    margin:60px auto;
-    padding:0 20px;
-}
-
-h1{
-    margin-bottom:30px;
-}
-
-.cart-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 0;
-    border-bottom:1px solid #333;
-}
-
-.item-name{
-    flex:2;
-}
-
-.item-price{
-    flex:1;
-    color:#d4af37;
-}
-
-.qty-stepper{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.qty-btn{
-    background:transparent;
-    border:1px solid #d4af37;
-    color:#d4af37;
-    width:26px;
-    height:26px;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:16px;
-}
-
-.qty-btn:hover{
-    background:#d4af37;
-    color:black;
-}
-
-.summary{
-    margin-top:40px;
-    border-top:1px solid #333;
-    padding-top:20px;
-}
-
-.summary-row{
-    display:flex;
-    justify-content:space-between;
-    margin:8px 0;
-}
-
-.total{
-    font-size:20px;
-    font-weight:600;
-}
-
-.checkout-form{
-    margin-top:40px;
-}
-
-.checkout-form input{
-    width:100%;
-    padding:12px;
-    margin-bottom:15px;
-    background:#1a1a1a;
-    border:1px solid #333;
-    color:white;
-    border-radius:6px;
-}
-
-.pay-btn{
-    width:100%;
-    padding:15px;
-    background:#d4af37;
-    color:black;
-    font-weight:600;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-.pay-btn:hover{
-    opacity:0.9;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Honest Restaurant</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
 
 <header>
-    <div class="logo">HONEST</div>
+    <div class="logo">
+        <a href="index.html">HONEST</a>
+    </div>
+    
     <nav>
-        <a href="menu.html">Back to Menu</a>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Cart<span id="cartCount" class="cart-count">0</span></a>
+        <a href="team.html">Our Team</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-<div class="container">
-    <h1>Your Order</h1>
+<section class="section">
+    <h2 class="text-center">Meet Our Team</h2>
+    <p class="text-center" style="max-width: 800px; margin: 0 auto 60px;">
+        Behind every exceptional dish is a passionate team dedicated to bringing you 
+        the finest Indian cuisine. Meet the people who make Honest Restaurant special.
+    </p>
 
-    <div id="cartItems"></div>
+    <div class="team-grid">
+        <div class="team-member">
+            <div class="team-photo">👨‍🍳</div>
+            <h3>Chef Rajesh Kumar</h3>
+            <p>Head Chef</p>
+            <p style="margin-top: 15px; color: #aaa; font-size: 14px;">
+                With over 20 years of culinary experience, Chef Rajesh brings authentic 
+                flavors and innovative techniques to every dish.
+            </p>
+        </div>
 
-    <div class="summary">
-        <div class="summary-row">
-            <span>Subtotal</span>
-            <span id="subtotal">$0.00</span>
+        <div class="team-member">
+            <div class="team-photo">👨‍💼</div>
+            <h3>Amit Patel</h3>
+            <p>Restaurant Manager</p>
+            <p style="margin-top: 15px; color: #aaa; font-size: 14px;">
+                Amit ensures every guest has an exceptional dining experience with his 
+                attention to detail and warm hospitality.
+            </p>
         </div>
-        <div class="summary-row">
-            <span>Tax (6.625%)</span>
-            <span id="tax">$0.00</span>
+
+        <div class="team-member">
+            <div class="team-photo">👩‍🍳</div>
+            <h3>Priya Sharma</h3>
+            <p>Sous Chef</p>
+            <p style="margin-top: 15px; color: #aaa; font-size: 14px;">
+                Specializing in South Indian cuisine, Priya's expertise in traditional 
+                recipes brings authenticity to our menu.
+            </p>
         </div>
-        <div class="summary-row total">
-            <span>Total</span>
-            <span id="total">$0.00</span>
+
+        <div class="team-member">
+            <div class="team-photo">👨‍🍳</div>
+            <h3>Vikram Singh</h3>
+            <p>Tandoor Chef</p>
+            <p style="margin-top: 15px; color: #aaa; font-size: 14px;">
+                Master of the tandoor, Vikram creates perfectly charred breads and 
+                succulent tandoori specialties.
+            </p>
         </div>
     </div>
+</section>
 
-    <div class="checkout-form">
-        <h2>Customer Details</h2>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="text" placeholder="Phone Number" required>
-        <input type="text" placeholder="Pickup Time (e.g. 6:30 PM)">
-        <button class="pay-btn" onclick="checkout()">Proceed to Payment</button>
+<section class="section" style="background: #0a0a0a; margin-top: 60px;">
+    <h2 class="text-center">Our Values</h2>
+    
+    <div class="menu-grid">
+        <div class="card">
+            <h3>🌟 Quality First</h3>
+            <p>We never compromise on the quality of our ingredients or the execution of our dishes.</p>
+        </div>
+        
+        <div class="card">
+            <h3>🤝 Customer Care</h3>
+            <p>Every guest is treated like family. Your satisfaction is our highest priority.</p>
+        </div>
+        
+        <div class="card">
+            <h3>🎯 Authenticity</h3>
+            <p>We honor traditional recipes while adding our own creative touch to each dish.</p>
+        </div>
+        
+        <div class="card">
+            <h3>💚 Sustainability</h3>
+            <p>We source locally when possible and minimize waste in our kitchen operations.</p>
+        </div>
     </div>
+</section>
 
-</div>
+<footer>
+    <p>© 2026 Honest Restaurant | Crafted with Excellence</p>
+    <p style="margin-top: 10px;">Join our team! Contact us for career opportunities.</p>
+</footer>
 
+<script src="js/cart.js"></script>
 <script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-const cartDiv = document.getElementById("cartItems");
-
-function renderCart(){
-    cartDiv.innerHTML="";
-    cart.forEach((item,index)=>{
-
-        const div=document.createElement("div");
-        div.className="cart-item";
-
-        div.innerHTML=`
-        <div class="item-name">${item.name}</div>
-        <div class="item-price">$${(item.price * item.qty).toFixed(2)}</div>
-        <div class="qty-stepper">
-            <button class="qty-btn" onclick="changeQty(${index},-1)">−</button>
-            <span>${item.qty}</span>
-            <button class="qty-btn" onclick="changeQty(${index},1)">+</button>
-        </div>
-        `;
-
-        cartDiv.appendChild(div);
-    });
-
-    calculateTotals();
-}
-
-function changeQty(index,change){
-    cart[index].qty += change;
-
-    if(cart[index].qty <=0){
-        cart.splice(index,1);
-    }
-
-    localStorage.setItem("cart",JSON.stringify(cart));
-    renderCart();
-}
-
-function calculateTotals(){
-    let subtotal = cart.reduce((sum,item)=>sum+(item.price*item.qty),0);
-    let tax = subtotal * 0.06625;
-    let total = subtotal + tax;
-
-    document.getElementById("subtotal").innerText="$"+subtotal.toFixed(2);
-    document.getElementById("tax").innerText="$"+tax.toFixed(2);
-    document.getElementById("total").innerText="$"+total.toFixed(2);
-}
-
-function checkout(){
-    if(cart.length===0){
-        alert("Your cart is empty.");
-        return;
-    }
-
-    alert("Payment integration ready. Next step: connect Stripe.");
-    localStorage.removeItem("cart");
-    window.location.href="menu.html";
-}
-
-renderCart();
+updateCartCount();
 </script>
 
 </body>
