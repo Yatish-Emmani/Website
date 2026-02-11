@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Honest Restaurant</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">HONEST</a>
+    </div>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Cart<span id="cartCount" class="cart-count">0</span></a>
+        <a href="team.html">Our Team</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="section">
+    <h2 class="text-center">Get In Touch</h2>
+    <p class="text-center" style="max-width: 700px; margin: 0 auto 60px;">
+        We'd love to hear from you! Whether you have questions about our menu, 
+        want to make a reservation, or need catering services, we're here to help.
+    </p>
+
+    <div class="contact-info">
+        <div class="contact-card">
+            <h3>📍 Location</h3>
+            <p>Honest Restaurant</p>
+            <p>Edison, New Jersey</p>
+            <p style="margin-top: 15px; font-size: 14px; color: #888;">
+                Conveniently located in the heart of Edison
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>📞 Phone</h3>
+            <p><a href="tel:+15551234567">(555) 123-4567</a></p>
+            <p style="margin-top: 10px; font-size: 14px; color: #888;">
+                Call us for reservations or takeout orders
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>📧 Email</h3>
+            <p><a href="mailto:info@honestrestaurant.com">info@honestrestaurant.com</a></p>
+            <p style="margin-top: 10px; font-size: 14px; color: #888;">
+                For catering inquiries and general questions
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>🕒 Hours</h3>
+            <p>Monday - Thursday: 11:00 AM - 10:00 PM</p>
+            <p>Friday - Saturday: 11:00 AM - 11:00 PM</p>
+            <p>Sunday: 12:00 PM - 9:00 PM</p>
+        </div>
+    </div>
+
+    <div style="max-width: 600px; margin: 80px auto 0;">
+        <h2 style="text-align: center; margin-bottom: 40px;">Send Us a Message</h2>
+        
+        <form id="contactForm" style="background: #1a1a1a; padding: 40px; border-radius: 12px; border: 1px solid rgba(212,175,55,0.1);">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Select a subject</option>
+                    <option value="reservation">Reservation</option>
+                    <option value="catering">Catering Inquiry</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="general">General Question</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="premium-btn" style="width: 100%; padding: 15px;">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Honest Restaurant | Crafted with Excellence</p>
+    <p style="margin-top: 10px;">Follow us on social media for updates and special offers!</p>
+</footer>
+
+<script src="js/cart.js"></script>
+<script>
+updateCartCount();
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+    };
+
+    console.log("Contact Form Submission:", formData);
+    
+    alert("Thank you for contacting us! We'll get back to you within 24 hours.");
+    
+    // Reset form
+    document.getElementById("contactForm").reset();
+});
+</script>
+
+</body>
+</html>
